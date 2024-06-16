@@ -1,0 +1,64 @@
+/* styles.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  /* Header and Navigation */
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  /* Hero Section */
+  .jumbotron {
+    background-image: url('path-to-your-background-image.jpg');
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+  }
+  
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  /* About Section */
+  .about-wrapper {
+    margin-top: 40px;
+  }
+  
+  /* Project Section */
+  .project-wrapper {
+    margin-top: 40px;
+  }
+  
+  .project-wrapper__text-title {
+    font-size: 24px;
+  }
+  
+  /* Contact Section */
+  .contact-wrapper {
+    margin-top: 40px;
+  }
+  
+  .cta-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  .cta-btn:hover {
+    background-color: #555;
+  }
+  

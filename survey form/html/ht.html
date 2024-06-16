@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta http-equiva="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>survey-form.freecodecamp.rocks</title>
+   
+    <body>
+        <div class="register">
+        <h1 id="title">freeCodeCamp Survey Form</h1>
+        <p id="description">Thank you for taking the time to help us improve the platform</p>
+        <form id="survey-form">
+            <fieldset id="nam">
+            <label id="name-label">Name</label>
+            <input id="name" type="text" required="input" name="name" placeholder="Enter your name"> 
+            <label id="email-label">Email</label>
+            <input id="email" type="email" name="Email" placeholder="Enter your Email" required="input">
+            <label id="number-label">Age</label>
+            <input id="number" type="number" requred="input" min="6" max="10"name="Age" placeholder="Enter your Age">
+            </fieldset>
+            <label>Which option best describes your current role?
+
+</label>
+            <select id="dropdown">
+                <option>1.Select current role</option>
+                <option>2.Student</option>
+                <option>3.Full time job</option>
+                <option>4.Part time job</option>
+            </select>
+            <p>Would you recommend freeCodeCamp to a Friend?</p>
+            <fieldset>
+                <label for="Definatily"><input id="Definality" type="radio" name="Definatily" class="inline" />Definatily</label>
+                <label for="Maybe"><input id="Maybe" type="radio" name="Maybe" class="inline"/>Maybe</label>
+                <label for="Not"><input id="Not" type="radio" name="Not" class="inline" />Not sure </label>
+            </fieldset>
+                <label>What is your favorite feature of freeCodeCamp?</label>
+            <select id="dropdown2">
+                <option>Select an Option</option>
+                <option>opensource</option>
+                <option>community</option>
+                <option>Challenges</option>
+                <option>Projects</option>
+            </select>
+            <p>Would you like to see improved?(Check all that apply)</p>
+            <fieldset>
+            <label for="Frontend"><input id="Frontend" type="checkbox" name="Frontend" class="inline" />Front-end Projects</label>
+            <label for="Backend"><input id="Backend" type="checkbox" name="Backend" class="inline" />Back-end Projects</label>
+            <label for="Data"><input id="Data" type="checkbox" name="Data" class="inline" />Data Visualization</label>
+            <label for="Challenges"><input id="Challenges" type="checkbox" name="Backend" class="inline" />Back-end Projects</label>
+            <label for="opensource"><input id="opensource" type="checkbox" name="opensource" class="inline" />Data Visualization</label>
+            <label for="Gitter"><input id="Gitter" type="checkbox" name="Gitter" class="inline" />Challenges</label>
+            <label for="videos"><input id="videos" type="checkbox" name="videos" class="inline" />Open Source Community</label>
+            <label for="meetups"><input id="meetups" type="checkbox" name="meetups" class="inline" />Gitter help rooms</label>
+            <label for="Wiki"><input id="Wiki" type="checkbox" name="Wiki" class="inline" />Wiki</label>
+            <label for="Forum"><input id="Forum" type="checkbox" name="Forum" class="inline" />Forum</label>
+            <label for="Courses"><input id="Courses" type="checkbox" name="Courses" class="inline" />Additional Resources</label>
+            </fieldset>
+            <p>Any comments or suggestion</p>
+            <textarea  id="bio" name="bio" rows="3" cols="30" placeholder="Enter your comment here...."></textarea>                                                                          
+            <button id="submit" type="submit">Submit</button>
+        </fieldset>
+        </form>
+        </div>                                                           
+    </body>
+    </html>

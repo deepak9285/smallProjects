@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket game</title>
+  </head>
+  <body>
+    <h1>Bat Ball stump game</h1>
+
+    <button
+      onclick="
+      let result='';
+      let computerchoice='';
+      let message='';
+      generatecomputerchoices();
+     result=  getresult(computerchoice,'Bat');
+    gettresult('Bat',computerchoice,result);
+  
+    
+    "
+    >
+      <img src="cricketbat.webp" width="200px" height="200px" alt="bat" />
+    </button>
+    <button
+      onclick="
+     //  let random=Math.random()*3;
+       computerchoice='';
+       message='';
+   
+     generatecomputerchoices();
+    result= getresult(computerchoice,'Ball');
+    gettresult('Ball',computerchoice,result);
+   
+   
+    "
+    >
+      <img src="cricketball.jpg" width="200px" height="200px" alt="ball" />
+    </button>
+    <button
+      onclick="
+       //let random=Math.random()*3;
+       computerchoice='';
+       message='';
+      generatecomputerchoices();
+      result=getresult(computerchoice,'wicket');
+      gettresult('wicket',computerchoice,result);
+  "
+    >
+      <img src="wicket.jpeg" width="200px" height="200px" alt="wicket" />
+    </button>
+    <button
+      onclick="localStorage.clear()
+    resetScore()
+      gettresult();"
+    >
+      Rest
+    </button>
+    <h3 id="Usermove"></h3>
+    <h3 id="computermove"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
+    <script>
+      let scoreStr = localStorage.getItem("score");
+      let score;
+      function resetScore(ScoreStr) {
+        score =
+          //scoreStr
+          //   ? JSON.parse(scoreStr)
+          {
+            win: 0,
+            lost: 0,
+            tie: 0,
+          };
+        score.displayScore = function () {
+          return `win: ${score.win} ,  lost: ${score.lost}, tie: ${score.tie}`;
+        };
+      }
+      //= JSON.parse(scoreStr) || {
+      //   //it is a shorthand properity first it will check undefined and then after that it will execute remainn
+      //   win: 0,
+      //   lost: 0,
+      //   tie: 0,
+      // };
+      if (scoreStr !== null) {
+        score = JSON.parse(scoreStr);
+        score.displayScore = function () {
+          return `win: ${score.win} ,  lost: ${score.lost}, tie: ${score.tie}`;
+        };
+      } else {
+        score = {
+          win: 0,
+          lost: 0,
+          tie: 0,
+        };
+        score.displayScore = function () {
+          return `win: ${score.win} ,  lost: ${score.lost}, tie: ${score.tie}`;
+        };
+      }
+
+      computerchoice = "";
+      function generatecomputerchoices() {
+        random = Math.random() * 3;
+        if (random > 0 && random <= 1) {
+          computerchoice = "Bat";
+        } else if (random > 1 && random <= 2) {
+          computerchoice = "Ball";
+        } else {
+          computerchoice = "wicket";
+        }
+      }
+      function getresult(computermove, usermove) {
+        if (usermove === "Bat") {
+          if (computermove === "Ball") {
+            score.win += 1;
+            return "you won";
+          } else if (computermove === "Bat") {
+            score.tie += 1;
+            return "Match tie";
+          } else {
+            score.lost += 1;
+            return "computer won and you loose";
+          }
+        } else if (usermove === "Ball") {
+          if (computermove === "Ball") {
+            score.tie += 1;
+            return "Match tie";
+          } else if (computermove === "Bat") {
+            score.lost += 1;
+            return "computer won and you loose";
+          } else {
+            score.win += 1;
+            return "you won";
+          }
+        } else {
+          if (computermove === "wicket") {
+            score.tie += 1;
+            return "Match tie";
+          } else if (computermove === "Bat") {
+            score.win += 1;
+            return "You won";
+          } else {
+            score.lost += 1;
+            return "computer won and you loose";
+          }
+        }
+      }
+      function gettresult(usermove, computermove, result) {
+        localStorage.setItem("Score", JSON.stringify(score));
+        // alert(
+        //   `your choice is ${usermove} and computer choice is ${computermove} and your result is ${result},
+        //   ${score.displayScore()}`
+        // );
+        document.querySelector("#Usermove").innerText =
+          usermove !== undefined ? `user move is ${usermove}` : "";
+        document.querySelector("#computermove").innerText =
+          computermove !== undefined ? `computer move is ${computermove}` : "";
+        document.querySelector("#result").innerText = result || ""; //another way of showing result
+        //result !== undefined ? result : "";
+        document.querySelector("#score").innerText = score.displayScore();
+      }
+    </script>
+  </body>
+</html>

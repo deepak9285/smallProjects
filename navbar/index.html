@@ -1,0 +1,88 @@
+<nav class="p-5 shadow-2xl md:flex md:items-center md:justify-between">
+  <div class="flex items-center justify-between">
+    <span>
+      <img class="w-28 ml-4 mr-0 rounded-[4rem]" src="gyaani.jpg" />
+    </span>
+    <span class="text-3xl cursor-pointer md:hidden block">
+      <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+    </span>
+  </div>
+
+  <ul
+    class="md:flex md:items-center z-[-1] md:z-auto md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500"
+  >
+    <li class="mx-4 my-6 md:my-0">
+      <a href="#home" class="text-xl hover:text-orange-500">Home</a>
+    </li>
+    <li class="mx-4 my-6 md:my-0">
+      <a href="#" class="md:hover:text-orange-500 cursor-pointer md:hover:">
+        Scholarship
+      </a>
+    </li>
+    <li class="mx-4 my-6 md:my-0">
+      <a href="#" class="md:hover:text-orange-500 cursor-pointer rounded-md">
+        College world
+      </a>
+    </li>
+    <li class="mx-4 my-6 md:my-0">
+      <select
+        id="mySelect"
+        onchange="goToPage()"
+        class="dropdown p-3 bg-orange-200 rounded-3xl space-y-1"
+      >
+        <option class="hover:cursor-pointer" value="">Resources</option>
+        <option
+          value="https://drive.google.com/drive/folders/1--Ob7206pUNvVUuLfVuGjxqvYIr6flho?usp=sharing "
+        >
+          Sgsits indore
+        </option>
+        <option
+          value="https://drive.google.com/drive/folders/1r28rXKYkxkGvvYSNg2zdQ6dqHaZgXyol?usp=sharing "
+        >
+          IET davv indore
+        </option>
+        <option
+          value="https://drive.google.com/drive/folders/1323iMViCqT4i20tYH4P-sM80l43xxok8?usp=sharing "
+        >
+          Jec jabalpur
+        </option>
+        <option
+          value="https://drive.google.com/drive/folders/10gx9xlqi-2OdEdKPwm1hBeF5YTUV5KsV?usp=sharing "
+        >
+          Mits gwalior
+        </option>
+        <option
+          value="https://drive.google.com/drive/folders/1x_LiakYzi6l4oHvwWKp4oFiIrFKIKtC8?usp=sharing "
+        >
+          Rgpv bhopal
+        </option>
+        <option
+          value="https://drive.google.com/drive/folders/1KCYllXac7hkvu4R_Lb4pkoy3HzARCmxC?usp=sharing "
+        >
+          Acropolis indore
+        </option>
+      </select>
+    </li>
+    <li class="mx-4 my-6 md:my-0">
+      <a
+        href="#contact"
+        class="md:hover:text-orange-500 cursor-pointer rounded-md"
+      >
+        Contact Us
+      </a>
+    </li>
+    <select
+      id="mySelect"
+      onchange="goToPage()"
+      class="dropdown p-3 bg-orange-200 rounded-3xl space-y-1"
+    >
+      <option class="hover:cursor-pointer" value="">Exam Section</option>
+      <option value="9_AND_10TH_EXAM_SECTION[1].pdf">9th and 10th</option>
+      <option value="11TH_AND_12TH[1].pdf">11th and 12th</option>
+      <option value="EXAM_AFTER_UNDERGRADUATION[1].pdf">
+        Exam after under graduation
+      </option>
+      <option value="POST_GRADUATION[1].pdf">Post graduation</option>
+    </select>
+  </ul>
+</nav>

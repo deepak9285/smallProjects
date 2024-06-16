@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="count()"></button>
+    <h1 id="count"></h1>
+    <script>
+      let c = localStorage.getItem("c") || 0;
+      function count() {
+        c++;
+        localStorage.setItem("count", c);
+        document.querySelector(
+          "#count"
+        ).innerHTML = `Button is pressed ${c} number of times`;
+        if (c % 2 == 0) {
+          document.querySelector("button");
+        } else {
+          document.querySelector("button");
+        }
+      }
+    </script>
+  </body>
+</html>

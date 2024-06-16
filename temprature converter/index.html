@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #aeabab;
+        text-align: center;
+      }
+      #converter {
+        width: 50%;
+        height: 500px;
+        margin: 5px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 2rem;
+      }
+      select {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        height: 5rem;
+      }
+      input[type="number"] {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1rem;
+        height: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="converter">
+      <h1>Temperature Converter</h1>
+      <label for="temperature">Enter Temperature in Degrees:</label>
+      <input
+        type="number"
+        id="temperature"
+        placeholder="Enter temperature"
+        oninput="convertTemperature()"
+      />
+      <label for="scale">Select Scale to Convert:</label>
+      <select id="scale" onchange="convertTemperature()">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+      </select>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function convertTemperature() {
+        const temperatureInput = document.getElementById("temperature");
+        const scaleSelect = document.getElementById("scale");
+        const resultOutput = document.getElementById("result");
+
+        const temperature = parseFloat(temperatureInput.value);
+        const selectedScale = scaleSelect.value;
+
+        let result;
+
+        if (isNaN(temperature)) {
+          result = "Please enter a valid temperature.";
+        } else {
+          switch (selectedScale) {
+            case "celsius":
+              result = `${temperature}°C is ${(
+                (temperature * 9) / 5 +
+                32
+              ).toFixed(4)}°F and ${(temperature + 273.15).toFixed(4)}K`;
+              break;
+            case "fahrenheit":
+              result = `${temperature}°F is ${(
+                ((temperature - 32) * 5) /
+                9
+              ).toFixed(4)}°C and ${(
+                ((temperature - 32) * 5) / 9 +
+                273.15
+              ).toFixed(4)}K`;
+              break;
+            case "kelvin":
+              result = `${temperature}K is ${(temperature - 273.15).toFixed(
+                4
+              )}°C and ${(((temperature - 273.15) * 9) / 5 + 32).toFixed(4)}°F`;
+              break;
+          }
+        }
+
+        resultOutput.textContent = result;
+      }
+    </script>
+  </body>
+</html>

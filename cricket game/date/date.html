@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="my-button"></button>
+    <div class="my-div">This is my div</div>
+    <script>
+      //   let myDate = new Date();
+      //   console.log(myDate);
+      //   console.log(myDate.getTime());
+      //   console.log(myDate.getHours());
+      //   console.log(myDate.getSeconds());
+      //   console.log(myDate.getDay);
+      let button = document.createElement("Button");
+      button.innerText = "click me";
+      document.querySelector(".my-div").appendChild(button);
+      document.querySelector(".my-div").removeChild(button);
+    </script>
+  </body>
+</html>
